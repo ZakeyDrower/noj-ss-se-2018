@@ -69,7 +69,7 @@ bool is_8queens_ans(int *arr)
 void print_queens_table(int *arr)
 {
     cout << "No " << ++g_count_ans << ":" << endl;
-    for (int i = 0; i < 8;i++){
+    for (int i = 0; i < 8; i++){
         for (int j = 0; j < 8; j++){
             if(j==arr[i])
                 cout << "A";
