@@ -19,6 +19,9 @@
 // .A......
 // ....A...
 
+// 穷举算法的弊端：不能按序输出
+// 解决思路：使用全排列解决输出顺序问题
+
 #include <iostream>
 using namespace std;
 

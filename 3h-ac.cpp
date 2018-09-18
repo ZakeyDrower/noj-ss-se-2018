@@ -1,5 +1,6 @@
 /*
-
+传统算法解决八皇后问题
+一行一行的填矩阵
 */
 #include <stdio.h>
 #include <stdlib.h>
