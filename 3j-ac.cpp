@@ -24,9 +24,11 @@ int main()
     for (int i = 0; i < n; i++)
         cin >> ia[i];
 
-    dfs(0);
+    used[ia[0]] = 1;
+    oa[0] = ia[0];
+    dfs(1); // 第一位可以定死
 
-    cout << count_ans/n << endl;
+    cout << count_ans << endl;
 
     return 0;
 }
@@ -45,7 +47,7 @@ void dfs(int index)
     }
     else
     {
-        for (int i = 0; i < n; i++)
+        for (int i = 1; i < n; i++)
         {
             if(used[ia[i]] == 0)
             {
