@@ -1,59 +1,33 @@
-#include<stdio.h>
-#include<stack>
-#include<string.h>
+#include <iostream>
+#include <vector>
 using namespace std;
-int calcu(int num1,int num2,char op);
-stack <int> s1;
-char s[1000];
-int a[1000];
-int main()
+int used[20] = {0};
+void permutation(int *arr, int *ansarr, int index, int n)
 {
- int n,i,num1,num2;
- int result;
- 
- gets(s);
- 
- n=strlen(s);
- 
- for(i=0; i<n; i++)
- {
-  if(s[i]>=48&&s[i]<=57)
-  {
-   a[i]=s[i]-'0';
-   result=a[i];
-   s1.push(a[i]);
-  }
-  else
-  {
-   num2=s1.top();
-   s1.pop();
-   num1=s1.top();
-   s1.pop();
-   result=calcu(num1,num2,s[i]);
-   s1.push(result);
-  }
- }
- printf("%d\n",result);
+    if (index == n)
+    {
+        for (int i = 0; i < n;i++)
+            cout << ansarr[i] << ' ';
+        cout << endl;
+    }
+    else
+    {
+        for (int i = 0; i < n; i++)
+        {
+            if(used[arr[i]]==0){
+                used[arr[i]] = 1;
+                ansarr[index] = arr[i];
+                permutation(arr, ansarr, index + 1, n);
+                used[arr[i]] = 0;
+            } 
+        }
+    }
 }
 
-int calcu(int num1,int num2,char op)
+int main()
 {
- int result; 
- if(op=='+')
- {
-  result=num1+num2;
- }
- if(op=='-')
- {
-  result=num1-num2;
- }
- if(op=='*')
- {
-  result=num1*num2;
- }
- if(op=='/')
- {
-  result=num1/num2;
- }
- return result;
+    int a[4] = {1, 2, 3, 4};
+    int ansarr[4] = {0};
+    permutation(a, ansarr, 0, 4);
+    return 0;
 }
