@@ -27,8 +27,20 @@ void non_recursive_search(int *arr, int length, int key)
 
 void recursive_serarch(int *arr, int low, int high, int key)
 {
-
-    
+    if(low > high)
+    {
+        cout << "No" << endl;
+    }
+    else
+    {
+        int middle = (low + high) / 2;
+        if(arr[middle] > key)
+            recursive_serarch(arr, low, middle - 1, key);
+        else if(arr[middle] < key)
+            recursive_serarch(arr, middle + 1, high, key);
+        else
+            cout << "Yes" << endl;
+    }
 }
 
 int main()
@@ -44,7 +56,8 @@ int main()
     {
         int key;
         cin >> key;
-        non_recursive_search(arr, n, key);
+        //non_recursive_search(arr, n, key);
+        recursive_serarch(arr, 0, n - 1, key);
     }
 
     return 0;

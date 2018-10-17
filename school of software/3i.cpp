@@ -2,7 +2,7 @@
 //     -- MAX(SIGMA(Pi)), MIN(SIGMA(Ci))
 // method 1: Greedy Alg (local optimal solution && global better solution)
 // method 2: Dynamic Plan (selected)
-//           T(f) = ??      S(f) = O(n^2)
+//           T(f) = ??      S(f) = O(n^2) || S(f) = O(n)
 // method 3: Enumeration (similar to exhaustive n-bit binary number) (selected)
 //           T(f) = O(n!)   S(f) = O(n)
 // [PS] multiple test data
